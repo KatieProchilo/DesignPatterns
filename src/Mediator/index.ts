@@ -116,9 +116,4 @@ export const test = () => {
 
 const wait = (ms: number) => {
   return new Promise(resolve => setTimeout(resolve, ms));
-  // var start = new Date().getTime();
-  // var end = start;
-  // while (end < start + ms) {
-  //   end = new Date().getTime();
-  // }
 }
