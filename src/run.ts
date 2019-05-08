@@ -1,5 +1,5 @@
-import * as oSingleton from './Singleton/oSingleton';
-import * as mySingleton from './Singleton/singleton';
+// import * as oSingleton from './Singleton/oSingleton';
+// import * as mySingleton from './Singleton/singleton';
 // import * as oObserver from './Observer/oObserver';
 // import * as myObserver from './Observer/observer';
 import * as mediator from './Mediator/index'
