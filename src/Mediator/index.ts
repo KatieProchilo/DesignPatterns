@@ -23,16 +23,16 @@ class ConcreteMediator implements Mediator {
     this.component2.setMediator(this);
   }
 
-  public notify(sender: object, event: string): void {
+  public async notify(sender: object, event: string): Promise<void> {
     if (event === 'A') {
       console.log('Mediator reacts on A and triggers following operations:');
-      wait(2000);
+      await wait(2000);
       this.component2.doC();
     }
 
     if (event === 'D') {
       console.log('Mediator reacts on D and triggers following operations:');
-      wait(2000);
+      await wait(2000);
       this.component1.doB();
       this.component2.doC();
     }
@@ -50,9 +50,9 @@ class BaseComponent {
     this.mediator = mediator;
   }
 
-  public setMediator(mediator: Mediator): void {
+  public async setMediator(mediator: Mediator): Promise<void> {
     console.log('The Component is subscribed to the Mediator.');
-    wait(2000);
+    await wait(2000);
     this.mediator = mediator;
   }
 }
@@ -62,29 +62,29 @@ class BaseComponent {
 * other components. They also don't depend on any concrete mediator classes.
 */
 class Component1 extends BaseComponent {
-  public doA(): void {
+  public async doA(): Promise<void> {
     console.log('Component 1 does A.');
-    wait(2000);
+    await wait(2000);
     this.mediator.notify(this, 'A');
   }
 
-  public doB(): void {
+  public async doB(): Promise<void> {
     console.log('Component 1 does B.');
-    wait(2000);
+    await wait(2000);
     this.mediator.notify(this, 'B');
   }
 }
 
 class Component2 extends BaseComponent {
-  public doC(): void {
+  public async doC(): Promise<void> {
     console.log('Component 2 does C.');
-    wait(2000);
+    await wait(2000);
     this.mediator.notify(this, 'C');
   }
 
-  public doD(): void {
+  public async doD(): Promise<void> {
     console.log('Component 2 does D.');
-    wait(2000);
+    await wait(2000);
     this.mediator.notify(this, 'D');
   }
 }
@@ -92,28 +92,28 @@ class Component2 extends BaseComponent {
 /**
  * The client code.
  */
-export const test = () => {
+export const test = async () => {
   console.log('Creating Component 1...');
-  wait(2000);
+  await wait(2000);
   const c1 = new Component1();
 
   console.log('Creating Component 2...');
-  wait(2000);
+  await wait(2000);
   const c2 = new Component2();
 
   console.log('Creating Concrete Mediator...\n');
-  wait(2000);
+  await wait(2000);
   const mediator = new ConcreteMediator(c1, c2);
 
   console.log('Client triggers operation A.');
-  wait(2000);
+  await wait(2000);
   c1.doA();
 
   console.log('\nClient triggers operation D.');
-  wait(2000);
+  await wait(2000);
   c2.doD();
 }
 
-const wait = (ms: number) => {
+const wait = (ms: number): Promise<{}> => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
