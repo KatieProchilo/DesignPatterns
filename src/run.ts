@@ -1,16 +1,22 @@
-// import * as oSingleton from './Singleton/oSingleton';
-// import * as mySingleton from './Singleton/singleton';
-// import * as oObserver from './Observer/oObserver';
-// import * as myObserver from './Observer/observer';
-import * as mediator from './Mediator/index'
+import {
+    exampleTest,
+    // mediatorTest,
+    // observerTest,
+    // oSingletonTest,
+    practiceTest,
+    // singletonTest,
+} from './';
 
-// Singleton Pattern
-// oSingleton.test();
-// mySingleton.test();
+// Singleton
+// oSingletonTest();
+// singletonTest();
 
-// Observer Pattern
-// oObserver.test();
-// myObserver.test();
+// Observer
+// observerTest();
 
-// Mediator Pattern
-mediator.test();
+// Mediator
+// mediatorTest();
+
+// Prototype
+exampleTest();
+practiceTest();
