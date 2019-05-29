@@ -1,6 +1,3 @@
-/**
- * Each Concrete Factory has a corresponding product variant.
- */
 export class ConcreteBlueFactory implements AbstractFactory {
     public provideSynonym(): AbstractSynonym {
         return new ConcreteBlueSynonym();

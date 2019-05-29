@@ -1,16 +1,22 @@
 import {
     abstractFactoryTest,
-    // exampleTest,
-    // guruAbstractFactoryTest,
-    // mediatorTest,
-    // oSingletonTest,
-    // practiceTest,
-    // singletonTest,
+    exampleTest,
+    factoryTest,
+    guruAbstractFactoryTest,
+    guruFactoryTest,
+    mediatorTest,
+    oSingletonTest,
+    practiceTest,
+    singletonTest,
 } from './';
 
 // Abstract Factory
 abstractFactoryTest();
 // guruAbstractFactoryTest();
+
+// Factory
+// factoryTest();
+// guruFactoryTest();
 
 // Mediator
 // mediatorTest();

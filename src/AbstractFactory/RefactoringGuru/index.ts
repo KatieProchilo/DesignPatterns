@@ -1,1 +1,1 @@
-export * from './guruAbstractFactory';
+export * from './abstractFactory';

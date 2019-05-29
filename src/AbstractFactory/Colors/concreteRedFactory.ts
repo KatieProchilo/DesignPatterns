@@ -1,9 +1,3 @@
-/**
- * Concrete Factories produce a family of products that belong to a single
- * variant. The factory guarantees that resulting products are compatible. Note
- * that signatures of the Concrete Factory's methods return an abstract product,
- * while inside the method a concrete product is instantiated.
- */
 export class ConcreteRedFactory implements AbstractFactory {
     public provideSynonym(): AbstractSynonym {
         return new ConcreteRedSynonym();
@@ -14,9 +8,6 @@ export class ConcreteRedFactory implements AbstractFactory {
     }
 }
 
-/**
- * Concrete Products are created by corresponding Concrete Factories.
- */
 class ConcreteRedSynonym implements AbstractSynonym {
     public provideSynonym(): string {
         const redSynonyms = ["scarlett", "burgundy"];
@@ -25,9 +16,6 @@ class ConcreteRedSynonym implements AbstractSynonym {
     }
 }
 
-/**
- * Concrete Products are created by corresponding Concrete Factories.
- */
 class ConcreteRedExample implements AbstractExample {
     public provideExample(): string {
         const redObjects = ["fox", "barn"];
