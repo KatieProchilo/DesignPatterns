@@ -15,6 +15,10 @@ const clientCode = (factory: AbstractFactory) => {
 
 export const abstractFactoryTest = () => {
     console.log('\n\n##### PERSONAL - ABSTRACT FACTORY TEST #####\n');
+    console.log('Notice the same client code is called for');
+    console.log('both the RED and BLUE factories. This is a');
+    console.log('strong sign that the Abstract Factory');
+    console.log('pattern is being used.\n');
 
     console.log("\x1b[31m", 'Client: Testing client code with the RED factory type...', "\x1b[0m");
     clientCode(new ConcreteRedFactory());

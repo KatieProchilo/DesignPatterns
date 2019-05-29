@@ -1,7 +1,7 @@
 import {
     abstractFactoryTest,
     // exampleTest,
-    guruAbstractFactoryTest,
+    // guruAbstractFactoryTest,
     // mediatorTest,
     // oSingletonTest,
     // practiceTest,
@@ -10,7 +10,7 @@ import {
 
 // Abstract Factory
 abstractFactoryTest();
-guruAbstractFactoryTest();
+// guruAbstractFactoryTest();
 
 // Mediator
 // mediatorTest();
