@@ -1,2 +1,2 @@
-export * from './oSingleton';
-export * from './singleton';
+export * from './OReilly';
+export * from './Personal';
