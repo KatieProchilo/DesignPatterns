@@ -1,3 +1,5 @@
+import { AbstractExample, AbstractFactory, AbstractSynonym } from './abstractFactory';
+
 export class ConcreteRedFactory implements AbstractFactory {
     public provideSynonym(): AbstractSynonym {
         return new ConcreteRedSynonym();

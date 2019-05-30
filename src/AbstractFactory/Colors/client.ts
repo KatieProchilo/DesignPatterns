@@ -1,3 +1,4 @@
+import { AbstractFactory } from './abstractFactory';
 import { ConcreteBlueFactory } from './concreteBlueFactory';
 import { ConcreteRedFactory } from './concreteRedFactory';
 

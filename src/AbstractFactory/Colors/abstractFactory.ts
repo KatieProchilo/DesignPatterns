@@ -1,13 +1,13 @@
-interface AbstractFactory {
+export interface AbstractFactory {
     provideSynonym(): AbstractSynonym;
 
     provideExample(): AbstractExample;
 }
 
-interface AbstractSynonym {
+export interface AbstractSynonym {
     provideSynonym(): string;
 }
 
-interface AbstractExample {
+export interface AbstractExample {
     provideExample(): string;
 }
