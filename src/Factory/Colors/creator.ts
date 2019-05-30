@@ -7,7 +7,7 @@ export abstract class Creator {
         // Call the factory method to create a Product object.
         const product = this.factory();
         // Now, use the product.
-        return `Creator: The same creator's code has just worked with ${product.operation()}`;
+        return `Creator: ${product.provideExample()}${product.provideSynonym()}`;
     }
 }
 

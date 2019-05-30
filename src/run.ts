@@ -11,11 +11,11 @@ import {
 } from './';
 
 // Abstract Factory
-abstractFactoryTest();
+// abstractFactoryTest();
 // guruAbstractFactoryTest();
 
 // Factory
-// factoryTest();
+factoryTest();
 // guruFactoryTest();
 
 // Mediator
