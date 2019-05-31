@@ -1,8 +1,10 @@
 import {
     abstractFactoryTest,
+    adapterTest,
     exampleTest,
     factoryTest,
     guruAbstractFactoryTest,
+    guruAdapterTest,
     guruFactoryTest,
     mediatorTest,
     oSingletonTest,
@@ -14,8 +16,12 @@ import {
 // abstractFactoryTest();
 // guruAbstractFactoryTest();
 
+// Adapter
+adapterTest();
+guruAdapterTest();
+
 // Factory
-factoryTest();
+// factoryTest();
 // guruFactoryTest();
 
 // Mediator
