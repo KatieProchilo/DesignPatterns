@@ -1,5 +1,6 @@
 export * from './AbstractFactory';
 export * from './Adapter';
+export * from './Bridge';
 export * from './Factory';
 export * from './Fun';
 export * from './Mediator';

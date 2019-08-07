@@ -6,6 +6,10 @@ export class Adaptee {
     }
 }
 
+interface IAdapter {
+    request(): string;
+}
+
 export class Adapter extends Target {
     private adaptee: Adaptee;
 
