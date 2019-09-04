@@ -12,7 +12,7 @@ interface Component {
 */
 class ConcreteComponent implements Component {
   public operation(): string {
-    return 'ConcreteComponent';
+    return 'Here\'s some random message that can be sent through any platform! 🤯';
   }
 }
 
@@ -23,7 +23,7 @@ class ConcreteComponent implements Component {
 * include a field for storing a wrapped component and the means to initialize
 * it.
 */
-class Decorator implements Component {
+class NotifierDecorator implements Component {
   protected component: Component;
 
   constructor(component: Component) {
@@ -41,14 +41,14 @@ class Decorator implements Component {
 /**
 * Concrete Decorators call the wrapped object and alter its result in some way.
 */
-class ConcreteDecoratorA extends Decorator {
+class SMSNotifier extends NotifierDecorator {
   /**
    * Decorators may call parent implementation of the operation, instead of
    * calling the wrapped object directly. This approach simplifies extension
    * of decorator classes.
    */
   public operation(): string {
-    return `ConcreteDecoratorA(${super.operation()})`;
+    return `SMS says...(${super.operation()})`;
   }
 }
 
@@ -56,9 +56,9 @@ class ConcreteDecoratorA extends Decorator {
 * Decorators can execute their behavior either before or after the call to a
 * wrapped object.
 */
-class ConcreteDecoratorB extends Decorator {
+class FacebookNotifier extends NotifierDecorator {
   public operation(): string {
-    return `ConcreteDecoratorB(${super.operation()})`;
+    return `Facebook says...(${super.operation()})`;
   }
 }
 
@@ -92,8 +92,14 @@ export const guruDecoratorTest = () => {
   * Note how decorators can wrap not only simple components but the other
   * decorators as well.
   */
-  const decorator1 = new ConcreteDecoratorA(simple);
-  const decorator2 = new ConcreteDecoratorB(decorator1);
+  const smsDecorator = new SMSNotifier(simple);
+  const facebookSmsDecorator = new FacebookNotifier(smsDecorator);
+
+  const facebookDecorator = new FacebookNotifier(simple);
+  const smsFacebookDecorator = new SMSNotifier(facebookDecorator);
   console.log('Client: Now I\'ve got a decorated component:');
-  clientCode(decorator2);
+  clientCode(facebookSmsDecorator);
+  console.log('');
+  console.log('Client: Now I\'ve got a decorated component:');
+  clientCode(smsFacebookDecorator);
 }

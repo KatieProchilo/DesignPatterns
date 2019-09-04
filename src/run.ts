@@ -32,7 +32,7 @@ import {
 
 // Composite
 // compositeTest();
-guruCompositeTest();
+// guruCompositeTest();
 
 // Decorator
 // decoratorTest();
