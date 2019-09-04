@@ -2,11 +2,15 @@ import {
     abstractFactoryTest,
     adapterTest,
     bridgeTest,
+    // compositeTest,
+    // decoratorTest,
     exampleTest,
     factoryTest,
     guruAbstractFactoryTest,
     guruAdapterTest,
     guruBridgeTest,
+    guruCompositeTest,
+    guruDecoratorTest,
     guruFactoryTest,
     mediatorTest,
     oSingletonTest,
@@ -23,8 +27,16 @@ import {
 // guruAdapterTest();
 
 // Bridge
-bridgeTest();
-guruBridgeTest();
+// bridgeTest();
+// guruBridgeTest();
+
+// Composite
+// compositeTest();
+guruCompositeTest();
+
+// Decorator
+// decoratorTest();
+guruDecoratorTest();
 
 // Factory
 // factoryTest();
