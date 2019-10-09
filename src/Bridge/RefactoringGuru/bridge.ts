@@ -83,4 +83,4 @@ export const guruBridgeTest = () => {
     implementation = new ConcreteImplementationB();
     abstraction = new ExtendedAbstraction(implementation);
     clientCode(abstraction);
-}
+};

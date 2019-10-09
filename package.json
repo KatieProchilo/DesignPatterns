@@ -8,8 +8,8 @@
     },
     "scripts": {
         "build": "tsc --build && npm run fix",
-        "check": "prettier --check \"src/*\"",
-        "fix": "prettier --write \"src/*\"",
+        "check": "prettier --check \"src/**\"",
+        "fix": "prettier --write \"src/**\"",
         "start": "npm run build && node ./lib/run.js",
         "watch": "nodemon --watch ./src -e ts --exec \"npm run start\"",
         "test": "echo \"Error: no test specified\" && exit 1"

@@ -6,10 +6,7 @@ class Point {
         this.y = y;
     }
     deepCopy() {
-        return new Point(
-            this.x,
-            this.y
-        );
+        return new Point(this.x, this.y);
     }
 }
 
@@ -23,10 +20,7 @@ class Line {
 
     deepCopy() {
         // todo
-        return new Line(
-            this.start.deepCopy(),
-            this.end.deepCopy()
-        );
+        return new Line(this.start.deepCopy(), this.end.deepCopy());
     }
 
     toString() {
@@ -43,4 +37,4 @@ export const practiceTest = () => {
 
     console.log(line1.toString());
     console.log(line2.toString());
-}
+};

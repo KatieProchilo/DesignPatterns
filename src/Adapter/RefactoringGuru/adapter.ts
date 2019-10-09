@@ -31,7 +31,11 @@ class Adapter extends Target {
     }
 
     public request(): string {
-        const result = this.adaptee.specificRequest().split('').reverse().join('');
+        const result = this.adaptee
+            .specificRequest()
+            .split('')
+            .reverse()
+            .join('');
         return `Adapter: (TRANSLATED) ${result}`;
     }
 }
@@ -43,7 +47,6 @@ function clientCode(target: Target) {
     console.log(target.request());
 }
 
-
 export const guruAdapterTest = () => {
     console.log('\n\n##### REFACTORING GURU - ADAPTER TEST #####\n');
 
@@ -54,7 +57,9 @@ export const guruAdapterTest = () => {
     console.log('');
 
     const adaptee = new Adaptee();
-    console.log('Client: The Adaptee class has a weird interface. See, I don\'t understand it:');
+    console.log(
+        "Client: The Adaptee class has a weird interface. See, I don't understand it:"
+    );
     console.log(`Adaptee: ${adaptee.specificRequest()}`);
 
     console.log('');
@@ -62,4 +67,4 @@ export const guruAdapterTest = () => {
     console.log('Client: But I can work with it via the Adapter:');
     const adapter = new Adapter(adaptee);
     clientCode(adapter);
-}
+};

@@ -22,7 +22,7 @@ const goodSingleton = (() => {
             }
 
             return instance;
-        }
+        },
     };
 })();
 
@@ -38,8 +38,8 @@ const badSingleton = (() => {
         return {
             getRandomNumber: () => {
                 return privateRandomNumber;
-            }
-        }
+            },
+        };
     };
 
     return {
@@ -47,28 +47,30 @@ const badSingleton = (() => {
             instance = init();
 
             return instance;
-        }
+        },
     };
 })();
 
 export const oSingletonTest = () => {
-    console.log("\nRUNNING OREILLY SINGLETON");
+    console.log('\nRUNNING OREILLY SINGLETON');
 
-    console.log("\nCreating a good singleton instance.");
+    console.log('\nCreating a good singleton instance.');
     let singletonA = goodSingleton.getInstance();
 
-    console.log("Creating a second good singleton instance.");
+    console.log('Creating a second good singleton instance.');
     let singletonB = goodSingleton.getInstance();
 
-    console.log("Comparing good instances...");
+    console.log('Comparing good instances...');
     console.log(singletonA.getRandomNumber() === singletonB.getRandomNumber()); // true
 
-    console.log("\nCreating a bad singleton instance.");
+    console.log('\nCreating a bad singleton instance.');
     let badSingletonA = badSingleton.getInstance();
 
-    console.log("Creating a second bad singleton instance.");
+    console.log('Creating a second bad singleton instance.');
     let badSingletonB = badSingleton.getInstance();
 
-    console.log("Comparing bad instances...");
-    console.log(badSingletonA.getRandomNumber() === badSingletonB.getRandomNumber()); // false
-}
+    console.log('Comparing bad instances...');
+    console.log(
+        badSingletonA.getRandomNumber() === badSingletonB.getRandomNumber()
+    ); // false
+};

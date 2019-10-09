@@ -88,7 +88,6 @@ interface AbstractProductB {
  * Concrete Products are created by corresponding Concrete Factories.
  */
 class ConcreteProductB1 implements AbstractProductB {
-
     public usefulFunctionB(): string {
         return 'The result of the product B1.';
     }
@@ -105,7 +104,6 @@ class ConcreteProductB1 implements AbstractProductB {
 }
 
 class ConcreteProductB2 implements AbstractProductB {
-
     public usefulFunctionB(): string {
         return 'The result of the product B2.';
     }
@@ -143,6 +141,8 @@ export const guruAbstractFactoryTest = () => {
     console.log('Client: Testing client code with the first factory type...');
     clientCode(new ConcreteFactory1());
 
-    console.log('\nClient: Testing the same client code with the second factory type...');
+    console.log(
+        '\nClient: Testing the same client code with the second factory type...'
+    );
     clientCode(new ConcreteFactory2());
-}
+};

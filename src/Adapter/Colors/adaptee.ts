@@ -19,7 +19,11 @@ export class Adapter extends Target {
     }
 
     public request(): string {
-        const result = this.adaptee.specificRequest().split('').reverse().join('');
+        const result = this.adaptee
+            .specificRequest()
+            .split('')
+            .reverse()
+            .join('');
         return `Adapter: (TRANSLATED) ${result}`;
     }
 }

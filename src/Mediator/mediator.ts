@@ -8,9 +8,9 @@ interface Mediator {
 }
 
 /**
-* Concrete Mediators implement cooperative behavior by coordinating several
-* components.
-*/
+ * Concrete Mediators implement cooperative behavior by coordinating several
+ * components.
+ */
 class ConcreteMediator implements Mediator {
     private component1: Component1;
 
@@ -25,13 +25,17 @@ class ConcreteMediator implements Mediator {
 
     public async notify(sender: object, event: string): Promise<void> {
         if (event === 'A') {
-            console.log('Mediator reacts on A and triggers following operations:');
+            console.log(
+                'Mediator reacts on A and triggers following operations:'
+            );
             await wait(2000);
             this.component2.doC();
         }
 
         if (event === 'D') {
-            console.log('Mediator reacts on D and triggers following operations:');
+            console.log(
+                'Mediator reacts on D and triggers following operations:'
+            );
             await wait(2000);
             this.component1.doB();
             this.component2.doC();
@@ -40,9 +44,9 @@ class ConcreteMediator implements Mediator {
 }
 
 /**
-* The Base Component provides the basic functionality of storing a mediator's
-* instance inside component objects.
-*/
+ * The Base Component provides the basic functionality of storing a mediator's
+ * instance inside component objects.
+ */
 class BaseComponent {
     protected mediator: Mediator;
 
@@ -58,9 +62,9 @@ class BaseComponent {
 }
 
 /**
-* Concrete Components implement various functionality. They don't depend on
-* other components. They also don't depend on any concrete mediator classes.
-*/
+ * Concrete Components implement various functionality. They don't depend on
+ * other components. They also don't depend on any concrete mediator classes.
+ */
 class Component1 extends BaseComponent {
     public async doA(): Promise<void> {
         console.log('Component 1 does A.');
@@ -112,8 +116,8 @@ export const mediatorTest = async () => {
     console.log('\nClient triggers operation D.');
     await wait(2000);
     c2.doD();
-}
+};
 
 const wait = (ms: number): Promise<{}> => {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
+};

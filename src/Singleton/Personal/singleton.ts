@@ -18,44 +18,44 @@ const mySingleton = (() => {
             getOptions: () => {
                 return options;
             },
-            secret: options.enchillada
+            secret: options.enchillada,
         };
     };
 
     return {
         // Provides global access to the singleton
         getInstance: (options?) => {
-            return instance = instance || init(options);
-        }
+            return (instance = instance || init(options));
+        },
     };
 })();
 
 export const singletonTest = () => {
-    console.log("\nRUNNING MY SINGLETON");
+    console.log('\nRUNNING MY SINGLETON');
 
     const initOptions = {
         a: 5,
         b: 9,
         c: 2,
-    }
+    };
 
-    console.log("\nInitial options are:");
+    console.log('\nInitial options are:');
     console.log(initOptions);
 
-    console.log("\nCreating singletonA instance with b set to 4.");
+    console.log('\nCreating singletonA instance with b set to 4.');
     let singletonA = mySingleton.getInstance({ enchillada: 4 });
 
-    console.log("Creating singletonB instance without setting anything.");
+    console.log('Creating singletonB instance without setting anything.');
     let singletonB = mySingleton.getInstance();
 
-    console.log("Comparing instances...");
+    console.log('Comparing instances...');
     console.log(singletonA.getOptions() === singletonB.getOptions()); // true
 
-    console.log("\nHere is singleton A:");
+    console.log('\nHere is singleton A:');
     console.log(singletonA.getOptions());
 
-    console.log("Here is singleton B:");
+    console.log('Here is singleton B:');
     console.log(singletonB.getOptions());
 
     console.log('##########*********##########', singletonB.secret);
-}
+};

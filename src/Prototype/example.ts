@@ -9,16 +9,13 @@ class Address {
     }
 
     deepCopy() {
-        return new Address(
-            this.streetAddress,
-            this.city,
-            this.country
-        );
+        return new Address(this.streetAddress, this.city, this.country);
     }
 
     toString() {
-        return `Address: ${this.streetAddress}, ` +
-            `${this.city}, ${this.country}`;
+        return (
+            `Address: ${this.streetAddress}, ` + `${this.city}, ${this.country}`
+        );
     }
 }
 
@@ -30,19 +27,18 @@ class Person {
         this.address = address;
     }
     deepCopy() {
-        return new Person(
-            this.name,
-            this.address.deepCopy()
-        );
+        return new Person(this.name, this.address.deepCopy());
     }
     toString() {
-        return `${this.name} lives at ${this.address}`
+        return `${this.name} lives at ${this.address}`;
     }
 }
 
 export const exampleTest = () => {
-    let john = new Person('John',
-        new Address('123 London Road', 'London', 'UK'));
+    let john = new Person(
+        'John',
+        new Address('123 London Road', 'London', 'UK')
+    );
 
     let jane = john.deepCopy();
 
@@ -51,4 +47,4 @@ export const exampleTest = () => {
 
     console.log(john.toString());
     console.log(jane.toString());
-}
+};

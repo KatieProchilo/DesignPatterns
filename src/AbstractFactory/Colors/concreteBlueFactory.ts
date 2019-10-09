@@ -1,4 +1,8 @@
-import { AbstractExample, AbstractFactory, AbstractSynonym } from './abstractFactory';
+import {
+    AbstractExample,
+    AbstractFactory,
+    AbstractSynonym,
+} from './abstractFactory';
 
 export class ConcreteBlueFactory implements AbstractFactory {
     public provideSynonym(): AbstractSynonym {
@@ -12,7 +16,7 @@ export class ConcreteBlueFactory implements AbstractFactory {
 
 class ConcreteBlueSynonym implements AbstractSynonym {
     public provideSynonym(): string {
-        const blueSynonyms = ["navy", "indigo", "sky blue"];
+        const blueSynonyms = ['navy', 'indigo', 'sky blue'];
         const randomIndex = Math.floor(Math.random() * blueSynonyms.length);
         return `Another type of blue is "${blueSynonyms[randomIndex]}".`;
     }
@@ -20,7 +24,7 @@ class ConcreteBlueSynonym implements AbstractSynonym {
 
 class ConcreteBlueExample implements AbstractExample {
     public provideExample(): string {
-        const blueObjects = ["blue bird", "blueberry", "sky"];
+        const blueObjects = ['blue bird', 'blueberry', 'sky'];
         const randomIndex = Math.floor(Math.random() * blueObjects.length);
         return `A "${blueObjects[randomIndex]}" is an example of something blue.`;
     }
