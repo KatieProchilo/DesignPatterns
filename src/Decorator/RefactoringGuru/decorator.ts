@@ -68,11 +68,7 @@ class FacebookNotifier extends NotifierDecorator {
 * with.
 */
 function clientCode(component: Component) {
-  // ...
-
   console.log(`RESULT: ${component.operation()}`);
-
-  // ...
 }
 
 export const guruDecoratorTest = () => {

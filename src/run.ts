@@ -5,12 +5,14 @@ import {
     // compositeTest,
     // decoratorTest,
     exampleTest,
+    // facadeTest,
     factoryTest,
     guruAbstractFactoryTest,
     guruAdapterTest,
     guruBridgeTest,
     guruCompositeTest,
     guruDecoratorTest,
+    guruFacadeTest,
     guruFactoryTest,
     mediatorTest,
     oSingletonTest,
@@ -36,7 +38,11 @@ import {
 
 // Decorator
 // decoratorTest();
-guruDecoratorTest();
+// guruDecoratorTest();
+
+// Facade
+// facadeTest();
+guruFacadeTest();
 
 // Factory
 // factoryTest();
