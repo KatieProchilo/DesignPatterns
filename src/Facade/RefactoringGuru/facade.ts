@@ -7,16 +7,18 @@
  */
 class Facade {
   protected subsystem1: Subsystem1;
-
   protected subsystem2: Subsystem2;
 
   /**
    * Depending on your application's needs, you can provide the Facade with
    * existing subsystem objects or force the Facade to create them on its own.
    */
-  constructor(subsystem1: Subsystem1 = null, subsystem2: Subsystem2 = null) {
-    this.subsystem1 = subsystem1 || new Subsystem1();
-    this.subsystem2 = subsystem2 || new Subsystem2();
+  constructor(
+    subsystem1: Subsystem1 = new Subsystem1(),
+    subsystem2: Subsystem2 = new Subsystem2()
+  ) {
+    this.subsystem1 = subsystem1;
+    this.subsystem2 = subsystem2;
   }
 
   /**

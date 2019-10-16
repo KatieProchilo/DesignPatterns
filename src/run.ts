@@ -7,6 +7,7 @@ import {
     exampleTest,
     // facadeTest,
     factoryTest,
+    // flyweightTest,
     guruAbstractFactoryTest,
     guruAdapterTest,
     guruBridgeTest,
@@ -14,6 +15,7 @@ import {
     guruDecoratorTest,
     guruFacadeTest,
     guruFactoryTest,
+    guruFlyweightTest,
     mediatorTest,
     oSingletonTest,
     practiceTest,
@@ -42,11 +44,15 @@ import {
 
 // Facade
 // facadeTest();
-guruFacadeTest();
+// guruFacadeTest();
 
 // Factory
 // factoryTest();
 // guruFactoryTest();
+
+// Flyweight
+// flyweightTest();
+guruFlyweightTest();
 
 // Mediator
 // mediatorTest();

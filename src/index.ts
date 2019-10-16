@@ -5,6 +5,7 @@ export * from './Composite';
 export * from './Decorator';
 export * from './Facade';
 export * from './Factory';
+export * from './Flyweight';
 export * from './Fun';
 export * from './Mediator';
 export * from './Prototype';
