@@ -16,9 +16,11 @@ import {
     guruFacadeTest,
     guruFactoryTest,
     guruFlyweightTest,
+    guruProxyTest,
     mediatorTest,
     oSingletonTest,
     practiceTest,
+    // proxyTest,
     singletonTest,
 } from './';
 
@@ -52,7 +54,7 @@ import {
 
 // Flyweight
 // flyweightTest();
-guruFlyweightTest();
+// guruFlyweightTest();
 
 // Mediator
 // mediatorTest();
@@ -63,6 +65,10 @@ guruFlyweightTest();
 // Prototype
 // exampleTest();
 // practiceTest();
+
+// Proxy
+// proxyTest();
+guruProxyTest();
 
 // Singleton
 // oSingletonTest();

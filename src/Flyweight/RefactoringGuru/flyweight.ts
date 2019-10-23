@@ -5,80 +5,84 @@
  * method parameters.
  */
 class Flyweight {
-  private sharedState: any;
+    private sharedState: any;
 
-  constructor(sharedState: any) {
-    this.sharedState = sharedState;
-  }
+    constructor(sharedState: any) {
+        this.sharedState = sharedState;
+    }
 
-  public operation(uniqueState): void {
-    const s = JSON.stringify(this.sharedState);
-    const u = JSON.stringify(uniqueState);
-    console.log(`Flyweight: Displaying shared (${s}) and unique (${u}) state.`);
-  }
+    public operation(uniqueState): void {
+        const s = JSON.stringify(this.sharedState);
+        const u = JSON.stringify(uniqueState);
+        console.log(
+            `Flyweight: Displaying shared (${s}) and unique (${u}) state.`
+        );
+    }
 }
 
 /**
-* The Flyweight Factory creates and manages the Flyweight objects. It ensures
-* that flyweights are shared correctly. When the client requests a flyweight,
-* the factory either returns an existing instance or creates a new one, if it
-* doesn't exist yet.
-*/
+ * The Flyweight Factory creates and manages the Flyweight objects. It ensures
+ * that flyweights are shared correctly. When the client requests a flyweight,
+ * the factory either returns an existing instance or creates a new one, if it
+ * doesn't exist yet.
+ */
 class FlyweightFactory {
-  private flyweights: { [key: string]: Flyweight } = <any>{};
+    private flyweights: { [key: string]: Flyweight } = <any>{};
 
-  constructor(initialFlyweights: string[][]) {
-    for (const state of initialFlyweights) {
-      this.flyweights[this.getKey(state)] = new Flyweight(state);
-    }
-  }
-
-  /**
-   * Returns a Flyweight's string hash for a given state.
-   */
-  private getKey(state: string[]): string {
-    return state.join('_');
-  }
-
-  /**
-   * Returns an existing Flyweight with a given state or creates a new one.
-   */
-  public getFlyweight(sharedState: string[]): Flyweight {
-    const key = this.getKey(sharedState);
-
-    if (!(key in this.flyweights)) {
-      console.log('FlyweightFactory: Can\'t find a flyweight, creating new one.');
-      this.flyweights[key] = new Flyweight(sharedState);
-    } else {
-      console.log('FlyweightFactory: Reusing existing flyweight.');
+    constructor(initialFlyweights: string[][]) {
+        for (const state of initialFlyweights) {
+            this.flyweights[this.getKey(state)] = new Flyweight(state);
+        }
     }
 
-    return this.flyweights[key];
-  }
-
-  public listFlyweights(): void {
-    const count = Object.keys(this.flyweights).length;
-    console.log(`\nFlyweightFactory: I have ${count} flyweights:`);
-    for (const key in this.flyweights) {
-      console.log(key);
+    /**
+     * Returns a Flyweight's string hash for a given state.
+     */
+    private getKey(state: string[]): string {
+        return state.join('_');
     }
-  }
+
+    /**
+     * Returns an existing Flyweight with a given state or creates a new one.
+     */
+    public getFlyweight(sharedState: string[]): Flyweight {
+        const key = this.getKey(sharedState);
+
+        if (!(key in this.flyweights)) {
+            console.log(
+                "FlyweightFactory: Can't find a flyweight, creating new one."
+            );
+            this.flyweights[key] = new Flyweight(sharedState);
+        } else {
+            console.log('FlyweightFactory: Reusing existing flyweight.');
+        }
+
+        return this.flyweights[key];
+    }
+
+    public listFlyweights(): void {
+        const count = Object.keys(this.flyweights).length;
+        console.log(`\nFlyweightFactory: I have ${count} flyweights:`);
+        for (const key in this.flyweights) {
+            console.log(key);
+        }
+    }
 }
 
 function addCarToPoliceDatabase(
-  ff: FlyweightFactory,
-  plates: string,
-  owner: string,
-  brand: string,
-  model: string,
-  color: string,
-  ) {
-  console.log('\nClient: Adding a car to database.');
-  const flyweight = ff.getFlyweight([brand, model, color]);
+    ff: FlyweightFactory,
+    plates: string,
+    owner: string,
+    brand: string,
+    model: string,
+    color: string
+) {
+    console.log('\nClient: Adding a car to database.');
+    const flyweight = ff.getFlyweight([brand, model, color]);
 
-  // The client code either stores or calculates extrinsic state and passes it
-  // to the flyweight's methods.
-  flyweight.operation([plates, owner]);
+    // The client code either stores or calculates extrinsic state and passes it
+    // to the flyweight's methods.
+    flyweight.operation([plates, owner]);
 }
 
 /**
@@ -86,24 +90,24 @@ function addCarToPoliceDatabase(
  * initialization stage of the application.
  */
 function clientCode() {
-  const factory = new FlyweightFactory([
-    ['Chevrolet', 'Camaro2018', 'pink'],
-    ['Mercedes Benz', 'C300', 'black'],
-    ['Mercedes Benz', 'C500', 'red'],
-    ['BMW', 'M5', 'red'],
-    ['BMW', 'X6', 'white'],
-  ]);
-  factory.listFlyweights();
+    const factory = new FlyweightFactory([
+        ['Chevrolet', 'Camaro2018', 'pink'],
+        ['Mercedes Benz', 'C300', 'black'],
+        ['Mercedes Benz', 'C500', 'red'],
+        ['BMW', 'M5', 'red'],
+        ['BMW', 'X6', 'white'],
+    ]);
+    factory.listFlyweights();
 
-  addCarToPoliceDatabase(factory, 'CL234IR', 'James Doe', 'BMW', 'M5', 'red');
+    addCarToPoliceDatabase(factory, 'CL234IR', 'James Doe', 'BMW', 'M5', 'red');
 
-  addCarToPoliceDatabase(factory, 'CL234IR', 'James Doe', 'BMW', 'X1', 'red');
+    addCarToPoliceDatabase(factory, 'CL234IR', 'James Doe', 'BMW', 'X1', 'red');
 
-  factory.listFlyweights();
+    factory.listFlyweights();
 }
 
 export const guruFlyweightTest = () => {
-  console.log('\n\n##### REFACTORING GURU - FLYWEIGHT TEST #####');
+    console.log('\n##### REFACTORING GURU - FLYWEIGHT TEST #####');
 
-  clientCode();
-}
+    clientCode();
+};

@@ -9,4 +9,5 @@ export * from './Flyweight';
 export * from './Fun';
 export * from './Mediator';
 export * from './Prototype';
+export * from './Proxy';
 export * from './Singleton';
