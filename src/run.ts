@@ -1,27 +1,30 @@
 import {
-    abstractFactoryTest,
-    adapterTest,
-    bridgeTest,
-    // compositeTest,
-    // decoratorTest,
-    exampleTest,
-    // facadeTest,
-    factoryTest,
-    // flyweightTest,
-    guruAbstractFactoryTest,
-    guruAdapterTest,
-    guruBridgeTest,
-    guruCompositeTest,
-    guruDecoratorTest,
-    guruFacadeTest,
-    guruFactoryTest,
-    guruFlyweightTest,
-    guruProxyTest,
-    mediatorTest,
-    oSingletonTest,
-    practiceTest,
-    // proxyTest,
-    singletonTest,
+  abstractFactoryTest,
+  adapterTest,
+  bridgeTest,
+  // commandTest,
+  // compositeTest,
+  // decoratorTest,
+  exampleTest,
+  // facadeTest,
+  factoryTest,
+  // flyweightTest,
+  guruAbstractFactoryTest,
+  guruAdapterTest,
+  guruBridgeTest,
+  guruChainOfResponsibilityTest,
+  guruCommandTest,
+  guruCompositeTest,
+  guruDecoratorTest,
+  guruFacadeTest,
+  guruFactoryTest,
+  guruFlyweightTest,
+  guruProxyTest,
+  mediatorTest,
+  oSingletonTest,
+  practiceTest,
+  // proxyTest,
+  singletonTest,
 } from './';
 
 // Abstract Factory
@@ -35,6 +38,14 @@ import {
 // Bridge
 // bridgeTest();
 // guruBridgeTest();
+
+// Chain Of Responsibility
+// chainOfResponsibilityTest();
+// guruChainOfResponsibilityTest();
+
+// Command
+// commandTest();
+guruCommandTest();
 
 // Composite
 // compositeTest();
@@ -68,7 +79,7 @@ import {
 
 // Proxy
 // proxyTest();
-guruProxyTest();
+// guruProxyTest();
 
 // Singleton
 // oSingletonTest();
