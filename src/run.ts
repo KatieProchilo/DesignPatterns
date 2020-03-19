@@ -9,6 +9,7 @@ import {
   // facadeTest,
   factoryTest,
   // flyweightTest,
+  // iteratorTest,
   guruAbstractFactoryTest,
   guruAdapterTest,
   guruBridgeTest,
@@ -19,6 +20,7 @@ import {
   guruFacadeTest,
   guruFactoryTest,
   guruFlyweightTest,
+  guruIteratorTest,
   guruProxyTest,
   mediatorTest,
   oSingletonTest,
@@ -45,7 +47,7 @@ import {
 
 // Command
 // commandTest();
-guruCommandTest();
+// guruCommandTest();
 
 // Composite
 // compositeTest();
@@ -66,6 +68,10 @@ guruCommandTest();
 // Flyweight
 // flyweightTest();
 // guruFlyweightTest();
+
+// Iterator
+// iteratorTest();
+guruIteratorTest();
 
 // Mediator
 // mediatorTest();
