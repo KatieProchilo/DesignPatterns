@@ -1,30 +1,31 @@
 {
-    "name": "designpatterns",
-    "version": "1.0.0",
-    "description": "",
-    "main": "run.js",
-    "directories": {
-        "lib": "lib"
-    },
-    "scripts": {
-        "build": "tsc --build",
-        "check": "prettier --check \"src/**\"",
-        "fix": "prettier --write \"src/**\"",
-        "start": "npm run build && node ./lib/run.js",
-        "watch": "nodemon --watch ./src -e ts --exec \"npm run start\"",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Katie Prochilo",
-    "license": "ISC",
-    "prettier": {
-        "tabWidth": 4,
-        "singleQuote": true,
-        "trailingComma": "es5"
-    },
-    "devDependencies": {
-        "prettier": "1.18.2"
-    },
-    "dependencies": {
-        "typescript": "^3.8.2"
-    }
+  "name": "designpatterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "check": "prettier --check \"src/**\"",
+    "fix": "prettier --write \"src/**\"",
+    "go": "node ./lib/run.js",
+    "start": "npm run build && node ./lib/run.js",
+    "watch": "nodemon --watch ./src -e ts --exec \"npm run start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Katie Prochilo",
+  "license": "ISC",
+  "prettier": {
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "prettier": "1.18.2"
+  },
+  "dependencies": {
+    "typescript": "^3.8.2"
+  }
 }

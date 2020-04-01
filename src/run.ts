@@ -21,6 +21,7 @@ import {
   guruFactoryTest,
   guruFlyweightTest,
   guruIteratorTest,
+  guruMementoTest,
   guruProxyTest,
   mediatorTest,
   oSingletonTest,
@@ -71,10 +72,13 @@ import {
 
 // Iterator
 // iteratorTest();
-guruIteratorTest();
+// guruIteratorTest();
 
 // Mediator
 // mediatorTest();
+
+// Memento
+guruMementoTest();
 
 // Observer
 // observerTest();

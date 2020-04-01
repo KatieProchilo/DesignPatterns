@@ -11,6 +11,7 @@ export * from './Flyweight';
 export * from './Fun';
 export * from './Iterator';
 export * from './Mediator';
+export * from './Memento/RefactoringGuru/memento';
 export * from './Prototype';
 export * from './Proxy';
 export * from './Singleton';
