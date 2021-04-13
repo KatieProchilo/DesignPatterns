@@ -1,6 +1,7 @@
 import {
   abstractFactoryTest,
   adapterTest,
+  appliedSingletonTest,
   bridgeTest,
   // commandTest,
   // compositeTest,
@@ -78,7 +79,7 @@ import {
 // mediatorTest();
 
 // Memento
-guruMementoTest();
+// guruMementoTest();
 
 // Observer
 // observerTest();
@@ -92,5 +93,6 @@ guruMementoTest();
 // guruProxyTest();
 
 // Singleton
+appliedSingletonTest();
 // oSingletonTest();
 // singletonTest();
